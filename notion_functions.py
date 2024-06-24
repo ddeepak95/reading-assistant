@@ -44,6 +44,29 @@ class NotionPage:
         else:
             print(f"Failed to create page: {response_json}")
             return None
+    def add_section_heading_to_page(self, page_id, section_title):
+        print("Adding Section Heading to Notion Page: " + section_title)
+        url = f"https://api.notion.com/v1/blocks/{page_id}/children"
+        formatted_section = [{
+            "object": "block",
+            "type": "heading_1",
+            "heading_1": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": section_title,
+                            "link": None
+                        }
+                    }
+                ]
+            }
+        
+        }]
+        response = requests.request("PATCH", url, headers=self.headers, json={"children": formatted_section})
+        response_json = response.json()
+        return response_json
+
 
     def add_chapter_to_page(self, page_id, chapter_summary, chapter_highlights):
         print("Adding Chapter to Notion Page: " + chapter_summary['title'])
@@ -189,9 +212,9 @@ class NotionPage:
 
         formatted_chapter = {
             "object": "block",
-            "type": "heading_1",
+            "type": "heading_2",
             "has_children": True,
-            "heading_1": {
+            "heading_2": {
                 "rich_text": [{
                 "type": "text",
                 "text": {"content": chapter_summary['title'],},
