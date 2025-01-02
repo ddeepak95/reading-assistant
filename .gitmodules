@@ -1,0 +1,3 @@
+[submodule "notebook"]
+	path = notebook
+	url = https://github.com/ddeepak95/notebook

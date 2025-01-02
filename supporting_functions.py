@@ -73,3 +73,4 @@ def find_highlights_for_chapter(chapter_title, all_chapter_highlights):
         if chapter['title'] == chapter_title:
             return chapter['highlights']
     return []
+
