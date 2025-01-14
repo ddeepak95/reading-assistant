@@ -2,3 +2,4 @@ python-dotenv
 ebooklib
 llama-index
 bs4
+tinydb
