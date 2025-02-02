@@ -6,3 +6,5 @@ app.py
 storage
 data
 notebook
+chroma
+chroma_db
