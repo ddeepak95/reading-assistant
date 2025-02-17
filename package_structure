@@ -1,0 +1,15 @@
+book_summarizer/
+├── __init__.py
+├── core/
+│   ├── __init__.py
+│   ├── book_loader.py
+│   ├── book_processor.py
+│   ├── highlight_processor.py
+│   └── summary_generator.py
+├── models/
+│   ├── __init__.py
+│   └── schemas.py
+├── utils/
+│   ├── __init__.py
+│   └── file_operations.py
+└── config.py 

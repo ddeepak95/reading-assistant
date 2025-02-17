@@ -5,3 +5,4 @@ bs4
 tinydb
 chromadb
 llama-index-vector-stores-chroma
+pydantic-ai
